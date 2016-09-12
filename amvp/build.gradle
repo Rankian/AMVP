@@ -1,13 +1,11 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.rubensousa'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -54,27 +52,6 @@ dependencies {
     androidTestCompile "com.android.support.test.espresso:espresso-idling-resource:$espressoVersion"
 }
 
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    failOnError false
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
-}
-
 //noinspection GroovyAssignabilityCheck
 configurations.all {
     resolutionStrategy.force "com.android.support:support-annotations:$supportLibVersion"
@@ -86,3 +63,6 @@ configurations.compile.dependencies.each { compileDependency ->
         configurations.androidTestCompile.exclude module: "${compileDependency.getName()}"
     }
 }
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+apply from: rootProject.file('gradle/gradle-bintray-upload.gradle')
