@@ -29,7 +29,8 @@ import icepick.State;
 import rubensousa.github.com.sampledi.data.model.User;
 import rubensousa.github.com.sampledi.ui.base.BasePresenter;
 
-public class UserPresenter extends BasePresenter<UserContract.View> implements UserContract.Presenter, UserContract.Interactor.OnLoadListener {
+public class UserPresenter extends BasePresenter<UserContract.View> implements UserContract.Presenter,
+        UserContract.Interactor.OnLoadListener {
 
     @State
     boolean loading;
