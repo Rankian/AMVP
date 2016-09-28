@@ -91,6 +91,7 @@ public class MvpDelegateImpl<V extends MvpView<P>, P extends MvpPresenter<V>> im
     @Override
     public void destroyPresenter() {
         if (mPresenter != null) {
+            mPresenter.onViewDetach();
             mPresenterCache.remove(mView.getPresenterKey());
         }
     }
