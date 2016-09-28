@@ -14,12 +14,8 @@ Please, check the sample projects.
 Add the following to your build.gradle:
 
 ```groovy
-repositories{
-    maven { url "https://jitpack.io" }
-}
-
 dependencies {
-    compile 'com.github.rubensousa:AMVP:1.3.2'
+    compile 'com.github.rubensousa:amvp:1.3.3'
 }
 ```
 
