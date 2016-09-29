@@ -52,7 +52,7 @@ public abstract class AbstractPresenter<V extends MvpView> implements MvpPresent
 
     @Override
     public void onDestroy() {
-        mView = null;
+        onViewDetach();
     }
 
     @Nullable
