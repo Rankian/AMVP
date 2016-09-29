@@ -15,7 +15,7 @@ Add the following to your build.gradle:
 
 ```groovy
 dependencies {
-    compile 'com.github.rubensousa:amvp:1.3.3'
+    compile 'com.github.rubensousa:amvp:1.3.4'
 }
 ```
 
