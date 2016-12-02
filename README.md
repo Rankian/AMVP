@@ -1,7 +1,7 @@
 # AMVP
 A simple Model-View-Presenter library for Android.
 
-This library was made because I wanted to learn how to implement MVP by myself. I'm using this on my personal projects, but you should take a look at [Mosby](https://github.com/sockeqwe/mosby) for a more complete solution.
+This library was made because I wanted to learn how to implement MVP by myself. I'm using this on my personal projects (like [EuroMillions](https://play.google.com/store/apps/details?id=io.github.rubensousa.euromillions)), but you should take a look at [Mosby](https://github.com/sockeqwe/mosby) for a more complete solution.
 
 Presenters are retained using a singleton cache.
 
