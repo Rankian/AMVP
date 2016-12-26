@@ -44,7 +44,6 @@ public class MvpDelegateImpl<V extends MvpView<P>, P extends MvpPresenter<V>> im
         if (mPresenter == null) {
             mPresenter = mCallbacks.createPresenter();
             if (mPresenter != null) {
-                mPresenter.onCreate(savedInstanceState);
                 mPresenterCache.cache(key, mPresenter);
             }
         } else {

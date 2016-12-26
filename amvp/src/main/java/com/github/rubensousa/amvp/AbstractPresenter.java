@@ -26,11 +26,6 @@ public abstract class AbstractPresenter<V extends MvpView> implements MvpPresent
     private V mView;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-
-    }
-
-    @Override
     public void onViewAttach(V view) {
         mView = view;
     }

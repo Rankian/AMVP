@@ -23,14 +23,6 @@ import android.support.annotation.Nullable;
 public interface MvpPresenter<V extends MvpView> {
 
     /**
-     * Called right after the presenter is created.
-     * This happens before onViewAttach, so View will be null.
-     *
-     * @param savedInstanceState Bundle that contains the previous saved state
-     */
-    void onCreate(@Nullable Bundle savedInstanceState);
-
-    /**
      * Should be called only when the fragment or activity's views aren't null
      * Life cycle callbacks that should call this:
      * onPostCreate
