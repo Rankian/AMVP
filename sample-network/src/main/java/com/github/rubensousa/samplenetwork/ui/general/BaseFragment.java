@@ -3,13 +3,13 @@ package com.github.rubensousa.samplenetwork.ui.general;
 import android.os.Bundle;
 
 
-import com.github.rubensousa.amvp.view.MvpSupportFragment;
+import com.github.rubensousa.amvp.view.MvpFragment;
 
 import icepick.Icepick;
 
 
 public abstract class BaseFragment<V extends Base.View<P>, P extends Base.Presenter<V, ?>>
-        extends MvpSupportFragment<V, P> implements Base.View<P> {
+        extends MvpFragment<V, P> implements Base.View<P> {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {

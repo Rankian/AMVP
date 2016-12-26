@@ -4,12 +4,12 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 
 
-import com.github.rubensousa.amvp.view.MvpAppCompatActivity;
+import com.github.rubensousa.amvp.view.MvpActivity;
 
 import icepick.Icepick;
 
 public abstract class BaseActivity<V extends Base.View<P>, P extends Base.Presenter<V,?>>
-        extends MvpAppCompatActivity<V, P> implements Base.View<P> {
+        extends MvpActivity<V, P> implements Base.View<P> {
 
     private ProgressDialog mProgressDialog;
 

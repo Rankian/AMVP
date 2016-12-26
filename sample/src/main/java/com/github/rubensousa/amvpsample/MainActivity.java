@@ -7,13 +7,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.github.rubensousa.amvp.view.MvpAppCompatActivity;
+import com.github.rubensousa.amvp.view.MvpActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends MvpAppCompatActivity<Main.View, Main.Presenter> implements Main.View {
+public class MainActivity extends MvpActivity<Main.View, Main.Presenter> implements Main.View {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;

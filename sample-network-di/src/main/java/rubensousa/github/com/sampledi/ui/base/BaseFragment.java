@@ -22,7 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.rubensousa.amvp.view.MvpSupportFragment;
+import com.github.rubensousa.amvp.view.MvpFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -30,7 +30,7 @@ import icepick.Icepick;
 
 
 public abstract class BaseFragment<V extends Base.View<P>, P extends Base.Presenter<V>>
-        extends MvpSupportFragment<V, P> implements Base.View<P> {
+        extends MvpFragment<V, P> implements Base.View<P> {
 
     private Unbinder mUnbinder;
 

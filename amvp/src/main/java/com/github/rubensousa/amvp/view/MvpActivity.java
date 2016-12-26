@@ -30,7 +30,7 @@ import com.github.rubensousa.amvp.delegate.MvpDelegateImpl;
 
 import java.util.List;
 
-public abstract class MvpAppCompatActivity<V extends MvpView<P>, P extends MvpPresenter<V>>
+public abstract class MvpActivity<V extends MvpView<P>, P extends MvpPresenter<V>>
         extends AppCompatActivity implements MvpView<P>, MvpDelegateCallbacks<V, P> {
 
     private MvpDelegate<V, P> mDelegate;

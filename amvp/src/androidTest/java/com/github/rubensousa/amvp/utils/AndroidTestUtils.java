@@ -19,9 +19,9 @@ package com.github.rubensousa.amvp.utils;
 import android.support.test.rule.ActivityTestRule;
 
 import com.github.rubensousa.amvp.cache.PresenterCache;
-import com.github.rubensousa.amvp.view.MvpAppCompatActivity;
-import com.github.rubensousa.amvp.view.MvpAppCompatDialogFragment;
-import com.github.rubensousa.amvp.view.MvpSupportFragment;
+import com.github.rubensousa.amvp.view.MvpActivity;
+import com.github.rubensousa.amvp.view.MvpDialogFragment;
+import com.github.rubensousa.amvp.view.MvpFragment;
 import com.github.rubensousa.amvp.activity.TestActivity;
 
 
@@ -31,15 +31,15 @@ public class AndroidTestUtils {
         PresenterCache.getInstance().remove(rule.getActivity().getPresenterKey());
     }
 
-    public static <T extends MvpAppCompatActivity> SimpleCountingIdlingResource getIdlingResource(ActivityTestRule<T> rule) {
+    public static <T extends MvpActivity> SimpleCountingIdlingResource getIdlingResource(ActivityTestRule<T> rule) {
         return EspressoIdlingResource.getIdlingResource(rule.getActivity().getPresenterKey());
     }
 
-    public static <T extends MvpSupportFragment> SimpleCountingIdlingResource getIdlingResource(T fragment) {
+    public static <T extends MvpFragment> SimpleCountingIdlingResource getIdlingResource(T fragment) {
         return EspressoIdlingResource.getIdlingResource(fragment.getPresenterKey());
     }
 
-    public static <T extends MvpAppCompatDialogFragment> SimpleCountingIdlingResource getIdlingResource(T fragment) {
+    public static <T extends MvpDialogFragment> SimpleCountingIdlingResource getIdlingResource(T fragment) {
         return EspressoIdlingResource.getIdlingResource(fragment.getPresenterKey());
     }
 }

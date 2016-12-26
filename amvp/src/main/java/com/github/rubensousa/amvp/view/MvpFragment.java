@@ -28,7 +28,7 @@ import com.github.rubensousa.amvp.delegate.MvpDelegateCallbacks;
 import com.github.rubensousa.amvp.delegate.MvpDelegateImpl;
 
 
-public abstract class MvpSupportFragment<V extends MvpView<P>, P extends MvpPresenter<V>> extends Fragment
+public abstract class MvpFragment<V extends MvpView<P>, P extends MvpPresenter<V>> extends Fragment
         implements MvpView<P>, MvpDelegateCallbacks<V, P> {
 
     private MvpDelegate<V, P> mDelegate;

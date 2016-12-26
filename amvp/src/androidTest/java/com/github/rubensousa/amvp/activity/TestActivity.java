@@ -23,11 +23,11 @@ import com.github.rubensousa.amvp.MvpPresenter;
 import com.github.rubensousa.amvp.dialogfragment.TestDialogFragment;
 import com.github.rubensousa.amvp.utils.ActivityCache;
 import com.github.rubensousa.amvp.utils.EspressoIdlingResource;
-import com.github.rubensousa.amvp.view.MvpAppCompatActivity;
+import com.github.rubensousa.amvp.view.MvpActivity;
 import com.github.rubensousa.amvp.fragment.TestFragment;
 
 
-public class TestActivity extends MvpAppCompatActivity {
+public class TestActivity extends MvpActivity {
 
     public static final String CREATE_FRAGMENT = "create_fragment";
     public static final String CREATE_DIALOG_FRAGMENT = "create_dialog_fragment";

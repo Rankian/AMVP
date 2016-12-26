@@ -18,10 +18,10 @@ package com.github.rubensousa.amvp.dialogfragment;
 
 import com.github.rubensousa.amvp.MvpPresenter;
 import com.github.rubensousa.amvp.utils.AndroidTestUtils;
-import com.github.rubensousa.amvp.view.MvpAppCompatDialogFragment;
+import com.github.rubensousa.amvp.view.MvpDialogFragment;
 
 
-public class TestDialogFragment extends MvpAppCompatDialogFragment {
+public class TestDialogFragment extends MvpDialogFragment {
 
     public static final String TAG = "testDialogFragment";
 

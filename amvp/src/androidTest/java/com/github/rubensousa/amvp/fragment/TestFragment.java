@@ -17,16 +17,13 @@
 package com.github.rubensousa.amvp.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
 
 import com.github.rubensousa.amvp.MvpPresenter;
 import com.github.rubensousa.amvp.utils.AndroidTestUtils;
-import com.github.rubensousa.amvp.view.MvpSupportFragment;
-import com.github.rubensousa.amvp.dialogfragment.TestDialogFragment;
+import com.github.rubensousa.amvp.view.MvpFragment;
 
 
-public class TestFragment extends MvpSupportFragment {
+public class TestFragment extends MvpFragment {
 
     public static final String TAG = "testFragment";
 

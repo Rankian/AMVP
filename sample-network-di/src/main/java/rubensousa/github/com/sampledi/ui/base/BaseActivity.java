@@ -21,7 +21,7 @@ import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
 import android.support.test.espresso.IdlingResource;
 
-import com.github.rubensousa.amvp.view.MvpAppCompatActivity;
+import com.github.rubensousa.amvp.view.MvpActivity;
 
 import icepick.Icepick;
 import rubensousa.github.com.sampledi.ui.base.di.FlavorComponent;
@@ -29,7 +29,7 @@ import rubensousa.github.com.sampledi.ui.base.di.presenter.PresenterComponent;
 import rubensousa.github.com.sampledi.utils.EspressoIdlingResource;
 
 public abstract class BaseActivity<V extends Base.View<P>, P extends Base.Presenter<V>>
-        extends MvpAppCompatActivity<V, P> implements Base.View<P> {
+        extends MvpActivity<V, P> implements Base.View<P> {
 
     private ProgressDialog mProgressDialog;
     private PresenterComponent mPresenterComponent;
