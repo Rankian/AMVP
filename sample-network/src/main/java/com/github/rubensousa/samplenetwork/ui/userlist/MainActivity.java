@@ -53,6 +53,14 @@ public class MainActivity extends BaseActivity<Main.View, Main.Presenter> implem
     }
 
     @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (savedInstanceState == null) {
+            getPresenter().load();
+        }
+    }
+
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         mAdapter.restoreState(savedInstanceState);

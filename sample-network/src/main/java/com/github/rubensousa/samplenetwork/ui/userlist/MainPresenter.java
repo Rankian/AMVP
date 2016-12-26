@@ -27,14 +27,6 @@ public class MainPresenter extends BasePresenter<Main.View, Main.Interactor>
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        if (savedInstanceState == null) {
-            // onViewStateRestored will be called after
-            loading = true;
-        }
-    }
-
-    @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
 
