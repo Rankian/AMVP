@@ -57,12 +57,6 @@ configurations.all {
     resolutionStrategy.force "com.android.support:support-annotations:$supportLibVersion"
 }
 
-configurations.compile.dependencies.each { compileDependency ->
-    println "Excluding compile dependency: ${compileDependency.getName()}"
-    configurations.androidTestCompile.dependencies.each { androidTestCompileDependency ->
-        configurations.androidTestCompile.exclude module: "${compileDependency.getName()}"
-    }
-}
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
 apply from: rootProject.file('gradle/gradle-bintray-upload.gradle')

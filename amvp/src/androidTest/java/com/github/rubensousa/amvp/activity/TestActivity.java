@@ -23,8 +23,8 @@ import com.github.rubensousa.amvp.MvpPresenter;
 import com.github.rubensousa.amvp.dialogfragment.TestDialogFragment;
 import com.github.rubensousa.amvp.utils.ActivityCache;
 import com.github.rubensousa.amvp.utils.EspressoIdlingResource;
-import com.github.rubensousa.amvp.view.MvpActivity;
 import com.github.rubensousa.amvp.fragment.TestFragment;
+import com.github.rubensousa.amvp.view.MvpActivity;
 
 
 public class TestActivity extends MvpActivity {
