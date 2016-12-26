@@ -53,19 +53,6 @@ public abstract class MvpBottomSheetDialogFragment<V extends MvpView<P>, P exten
         mDelegate.onViewStateRestored(savedInstanceState);
     }
 
-    /**
-     * Since onDestroy() isn't guaranteed to be called,
-     * we check if the current activity is finishing
-     */
-    @Override
-    public void onPause() {
-        super.onPause();
-        mDelegate.detachView();
-        if (getActivity().isFinishing()) {
-            mDelegate.destroyPresenter();
-        }
-    }
-
     @Override
     public void onStop() {
         super.onStop();
@@ -79,9 +66,19 @@ public abstract class MvpBottomSheetDialogFragment<V extends MvpView<P>, P exten
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        if (attachOnResumeDetachOnPause()) {
+            mDelegate.detachView();
+        }
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
-        mDelegate.attachView();
+        if (attachOnResumeDetachOnPause()) {
+            mDelegate.attachView();
+        }
     }
 
     @Override
@@ -110,5 +107,9 @@ public abstract class MvpBottomSheetDialogFragment<V extends MvpView<P>, P exten
     @Override
     public V getMvpView() {
         return (V) this;
+    }
+
+    public boolean attachOnResumeDetachOnPause() {
+        return false;
     }
 }

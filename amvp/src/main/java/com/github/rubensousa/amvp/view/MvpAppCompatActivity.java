@@ -74,9 +74,19 @@ public abstract class MvpAppCompatActivity<V extends MvpView<P>, P extends MvpPr
     }
 
     @Override
-    protected void onResume() {
+    public void onPause() {
+        super.onPause();
+        if (attachOnResumeDetachOnPause()) {
+            mDelegate.detachView();
+        }
+    }
+
+    @Override
+    public void onResume() {
         super.onResume();
-        mDelegate.attachView();
+        if (attachOnResumeDetachOnPause()) {
+            mDelegate.attachView();
+        }
     }
 
     @Override
@@ -105,5 +115,9 @@ public abstract class MvpAppCompatActivity<V extends MvpView<P>, P extends MvpPr
     @Override
     public V getMvpView() {
         return (V) this;
+    }
+
+    public boolean attachOnResumeDetachOnPause() {
+        return false;
     }
 }

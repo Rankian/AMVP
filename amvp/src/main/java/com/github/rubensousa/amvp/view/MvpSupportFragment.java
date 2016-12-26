@@ -29,7 +29,7 @@ import com.github.rubensousa.amvp.delegate.MvpDelegateImpl;
 
 
 public abstract class MvpSupportFragment<V extends MvpView<P>, P extends MvpPresenter<V>> extends Fragment
-        implements MvpView<P>,MvpDelegateCallbacks<V,P> {
+        implements MvpView<P>, MvpDelegateCallbacks<V, P> {
 
     private MvpDelegate<V, P> mDelegate;
     private P mPresenter;
@@ -53,20 +53,6 @@ public abstract class MvpSupportFragment<V extends MvpView<P>, P extends MvpPres
         mDelegate.onViewStateRestored(savedInstanceState);
     }
 
-
-    /**
-     * Since onDestroy() isn't guaranteed to be called,
-     * we check if the current activity is finishing
-     */
-    @Override
-    public void onPause() {
-        super.onPause();
-        mDelegate.detachView();
-        if (getActivity().isFinishing()) {
-            mDelegate.destroyPresenter();
-        }
-    }
-
     @Override
     public void onStop() {
         super.onStop();
@@ -79,10 +65,27 @@ public abstract class MvpSupportFragment<V extends MvpView<P>, P extends MvpPres
         mDelegate.attachView();
     }
 
+    /**
+     * Since onDestroy() isn't guaranteed to be called,
+     * we check if the current activity is finishing
+     */
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (attachOnResumeDetachOnPause()) {
+            mDelegate.detachView();
+        }
+        if (getActivity().isFinishing()) {
+            mDelegate.destroyPresenter();
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-        mDelegate.attachView();
+        if (attachOnResumeDetachOnPause()) {
+            mDelegate.attachView();
+        }
     }
 
     @Override
@@ -105,5 +108,9 @@ public abstract class MvpSupportFragment<V extends MvpView<P>, P extends MvpPres
     @Override
     public V getMvpView() {
         return (V) this;
+    }
+
+    public boolean attachOnResumeDetachOnPause() {
+        return false;
     }
 }
